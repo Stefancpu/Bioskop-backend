@@ -1,0 +1,25 @@
+import { Router } from "express";
+import { defineRequest } from "../utils";
+import { BookmarkService } from "../services/bookmark.service";
+
+export const BookmarkRoute = Router()
+
+BookmarkRoute.get('/', async (req: any, res) => {
+    await defineRequest(res, async () =>
+        await BookmarkService.getSimpleBookmarksByUserEmail(req.user.email)
+    )
+})
+
+BookmarkRoute.post('/movie/:id', async (req: any, res) => {
+    await defineRequest(res, async () => {
+        const id = Number(req.params.id)
+        await BookmarkService.createBookmark(req.user.email, id)
+    })
+})
+
+BookmarkRoute.delete('/:id', async (req: any, res) => {
+    await defineRequest(res, async () => {
+        const id = Number(req.params.id)
+        await BookmarkService.deleteBookmark(id)
+    })
+})

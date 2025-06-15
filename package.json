@@ -16,14 +16,17 @@
     "@types/express": "^5.0.3",
     "@types/jsonwebtoken": "^9.0.9",
     "@types/morgan": "^1.9.10",
+    "@types/server": "^1.0.11",
     "axios": "^1.10.0",
     "bcrypt": "^6.0.0",
     "cors": "^2.8.5",
+    "dev": "^0.1.3",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "morgan": "^1.10.0",
     "mysql2": "^3.14.1",
+    "server": "^1.0.41",
     "typeorm": "^0.3.24"
   }
 }
